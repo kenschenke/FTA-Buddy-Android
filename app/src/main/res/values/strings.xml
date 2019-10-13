@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">FTA Buddy</string>
+    <string name="title_field_monitor">Field Monitor</string>
+    <string name="title_flash_cards">Flash Cards</string>
+    <string name="title_reference">Reference</string>
+    <string name="title_about">About</string>
+    <string name="title_welcome_page">Welcome Page</string>
+    <string name="title_error_page">Error Page</string>
+
+    <string name="url_error_page">file:///android_asset/errorpage.html</string>
+    <string name="url_welcome">file:///android_asset/welcomepage.html</string>
+
+    <string name="flashcard_blank"></string>
+    <string name="flashcard_ethernet">Plug in Ethernet</string>
+    <string name="flashcard_come_here">Come Here</string>
+    <string name="flashcard_turn_on_robot">Turn on Robot</string>
+    <string name="flashcard_reboot_robot">Reboot Robot</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

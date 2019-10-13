@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FTA Buddy Reference</title>
+</head>
+<style>
+    .led-table td {
+        border: 2px solid black;
+    }
+    .led-table {
+        border-collapse: collapse;
+        width: 325px;
+    }
+    .section-table td {
+        border: 0;
+    }
+    .bold {
+        font-weight: bold;
+    }
+    .blue {
+        background-color: blue;
+    }
+    .red {
+        background-color: red;
+    }
+    .orange {
+        background-color: orange;
+    }
+    .green {
+        background-color: green;
+    }
+    .led {
+        width: 50px;
+    }
+    .highlight {
+        background-color: yellow;
+        font-weight: bold;
+    }
+    .section-table td {
+        vertical-align: top;
+    }
+</style>
+<body>
+
+<h1>FTA(A) Reference</h1>
+
+<h3>IP Address Subnets</h3>
+
+<table cellpadding="5" cellspacing="0" class="led-table">
+    <tr>
+        <td>
+            <table class="section-table">
+                <tr>
+                    <td width="125">Team 1</td>
+                    <td>10.0.1.x</td>
+                </tr>
+                <tr>
+                    <td>Team 12</td>
+                    <td>10.0.12.x</td>
+                </tr>
+                <tr>
+                    <td>Team 123</td>
+                    <td>10.1.23.x</td>
+                </tr>
+                <tr>
+                    <td>Team 1234</td>
+                    <td>10.12.34.x</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<h3>IP Addresses</h3>
+
+<table cellpadding="5" cellspacing="0" class="led-table">
+    <tr>
+        <td>
+            <table class="section-table">
+                <tr>
+                    <td width="125">Robot Radio</td>
+                    <td>10.TE.AM.1</td>
+                </tr>
+                <tr>
+                    <td>roboRIO</td>
+                    <td>10.TE.AM.2</td>
+                </tr>
+                <tr>
+                    <td>roboRIO USB</td>
+                    <td>172.22.11.2</td>
+                </tr>
+                <tr>
+                    <td>roboRIO Name</td>
+                    <td>roborio-TEAM-frc.local</td>
+                </tr>
+                <tr>
+                    <td>Field AP</td>
+                    <td>10.TE.AM.4</td>
+                </tr>
+                <tr>
+                    <td>Driver Station</td>
+                    <td>10.TE.AM.5</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><span class="highlight">(subnet 255.0.0.0)</span></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<h3>Helpful Commands</h3>
+
+<table cellpadding="5" cellspacing="0" class="led-table">
+    <tr>
+        <td>
+            <table class="section-table">
+                <tr>
+                    <td width="125">ncpa.cpl</td>
+                    <td>Network adapters</td>
+                </tr>
+                <tr>
+                    <td>firewall.cpl</td>
+                    <td>Windows firewall</td>
+                </tr>
+                <tr>
+                    <td>ipconfig</td>
+                    <td>Show network settings</td>
+                </tr>
+                <tr>
+                    <td>ipconfig /release</td>
+                    <td>Release DHCP address</td>
+                </tr>
+                <tr>
+                    <td>ipconfig /renew</td>
+                    <td>Acquire DHCP address</td>
+                </tr>
+                <tr>
+                    <td>ping 10.TE.AM.255</td>
+                    <td>Scans network</td>
+                </tr>
+                <tr>
+                    <td>arp -a</td>
+                    <td>Shows reachable IPs</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<h3>Robot Radio Lights</h3>
+
+<table cellpadding="5" cellspacing="0" class="led-table">
+    <tr>
+        <td>
+            <table class="section-table">
+                <tr>
+                    <td colspan="2" class="bold">Power</td>
+                </tr>
+                <tr>
+                    <td class="blue led">&nbsp;</td>
+                    <td>(blinking) Powering Up</td>
+                </tr>
+                <tr>
+                    <td class="blue led">&nbsp;</td>
+                    <td>Powered Up</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <table class="section-table">
+                <tr>
+                    <td colspan="2" class="bold">Wifi</td>
+                </tr>
+                <tr>
+                    <td class="led">Off</td>
+                    <td>Needs Programming</td>
+                </tr>
+                <tr>
+                    <td class="red led">&nbsp;</td>
+                    <td>AP, unlinked</td>
+                </tr>
+                <tr>
+                    <td class="orange led">&nbsp;</td>
+                    <td>AP, linked</td>
+                </tr>
+                <tr>
+                    <td class="green led">&nbsp;</td>
+                    <td>Bridge mode, linked</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<h3>RoboRIO Lights</h3>
+
+<table cellpadding="5" cellspacing="0" class="led-table">
+    <tr>
+        <td>
+            <table class="section-table">
+                <tr>
+                    <td colspan="2" class="bold">Power</td>
+                </tr>
+                <tr>
+                    <td class="green led">&nbsp;</td>
+                    <td>OK</td>
+                </tr>
+                <tr>
+                    <td class="orange led">&nbsp;</td>
+                    <td>Brownout</td>
+                </tr>
+                <tr>
+                    <td class="red led">&nbsp;</td>
+                    <td>Fault, check for short</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <table class="section-table">
+                <tr>
+                    <td colspan="2" class="bold">Status</td>
+                </tr>
+                <tr>
+                    <td class="led">(Off)</td>
+                    <td>OK</td>
+                </tr>
+                <tr>
+                    <td class="orange led">&nbsp;</td>
+                    <td>Re-image</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <table class="section-table">
+                <tr>
+                    <td colspan="2" class="bold">Radio</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="led">Ignore</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <table class="section-table">
+                <tr>
+                    <td colspan="2" class="bold">Comm</td>
+                </tr>
+                <tr>
+                    <td class="led">(Off)</td>
+                    <td>No Comms</td>
+                </tr>
+                <tr>
+                    <td class="red led">&nbsp;</td>
+                    <td>(blinking) Comms, no code</td>
+                </tr>
+                <tr>
+                    <td class="red led">&nbsp;</td>
+                    <td>(solid) E-Stop</td>
+                </tr>
+                <tr>
+                    <td class="green led">&nbsp;</td>
+                    <td>OK</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <table class="section-table">
+                <tr>
+                    <td colspan="2" class="bold">Mode</td>
+                </tr>
+                <tr>
+                    <td class="led">(Off)</td>
+                    <td>Disabled</td>
+                </tr>
+                <tr>
+                    <td class="orange led">&nbsp;</td>
+                    <td>Auto</td>
+                </tr>
+                <tr>
+                    <td class="green led">&nbsp;</td>
+                    <td>Teleop</td>
+                </tr>
+                <tr>
+                    <td class="red led">&nbsp;</td>
+                    <td>Test</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

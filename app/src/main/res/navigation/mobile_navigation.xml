@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_field_monitor">
+
+    <fragment
+        android:id="@+id/navigation_field_monitor"
+        android:name="com.kenschenke.ftabuddy.FieldMonitorFragment"
+        android:label="@string/title_field_monitor"
+        tools:layout="@layout/fragment_field_monitor" />
+
+    <fragment
+        android:id="@+id/navigation_flash_cards"
+        android:name="com.kenschenke.ftabuddy.FlashCardsFragment"
+        android:label="@string/title_flash_cards"
+        tools:layout="@layout/fragment_flash_cards" />
+
+    <fragment
+        android:id="@+id/navigation_reference"
+        android:name="com.kenschenke.ftabuddy.ReferenceFragment"
+        android:label="@string/title_reference"
+        tools:layout="@layout/fragment_reference" />
+
+    <fragment
+        android:id="@+id/navigation_about"
+        android:name="com.kenschenke.ftabuddy.AboutFragment"
+        android:label="@string/title_about"
+        tools:layout="@layout/fragment_about" />
+</navigation>
