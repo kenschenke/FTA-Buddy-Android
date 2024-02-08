@@ -30,7 +30,7 @@
         android:layout_marginRight="5dp"
         android:background="@android:color/transparent"
         android:scaleType="center"
-        android:src="@drawable/baseline_refresh_black_18dp"
+        android:src="@drawable/baseline_refresh_white_18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
