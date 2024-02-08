@@ -10,11 +10,18 @@
     <string name="url_error_page">file:///android_asset/errorpage.html</string>
     <string name="url_welcome">file:///android_asset/welcomepage.html</string>
 
-    <string name="flashcard_blank"></string>
-    <string name="flashcard_ethernet">Plug in Ethernet</string>
-    <string name="flashcard_come_here">Come Here</string>
-    <string name="flashcard_turn_on_robot">Turn on Robot</string>
-    <string name="flashcard_reboot_robot">Reboot Robot</string>
+    <string name="add_or_remove_flashcards">Add or Remove Flashcards</string>
+    <string name="flashcard_text">Flashcard text</string>
+    <string name="finish_editing">Finish editing</string>
+
+    <string-array name="default_flashcards">
+        <item>Plug in Ethernet</item>
+        <item>Turn on Robot</item>
+        <item>Come here</item>
+        <item>Switch driver stations</item>
+        <item>Setup game pieces</item>
+        <item>Preload?</item>
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

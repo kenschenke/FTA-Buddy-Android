@@ -14,9 +14,6 @@ public class FlashCardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flash_card);
 
-        TextView textViewContent = findViewById(R.id.textViewContent);
-        textViewContent.setText(getString(getIntent().getIntExtra("Content", R.string.flashcard_blank)));
-
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.hide();

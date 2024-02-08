@@ -1,116 +1,107 @@
 package com.kenschenke.ftabuddy;
 
 
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
+import com.kenschenke.ftabuddy.databinding.FragmentFlashCardsBinding;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.color.MaterialColors;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FlashCardsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class FlashCardsFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private FragmentFlashCardsBinding binding;
+    private boolean editing = false;
+    private View root;
+    private SharedPreferences flashcardPrefs;
+    private Set<String> flashcards;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-
-    public FlashCardsFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FlashCardsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FlashCardsFragment newInstance(String param1, String param2) {
-        FlashCardsFragment fragment = new FlashCardsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    LinearLayout layout;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        binding = FragmentFlashCardsBinding.inflate(inflater, container, false);
+        root = binding.getRoot();
+
+        layout = binding.flashcardButtons;
+
+        binding.flashcardDisplay.setOnClickListener(v -> {
+            binding.flashcardDisplay.setVisibility(View.GONE);
+            binding.flashcardsInterface.setVisibility(View.VISIBLE);
+        });
+
+        // TODO: Create a way to add and remove your own flashcards
+        flashcardPrefs = requireContext().getSharedPreferences("FTABuddy", 0);
+        flashcards = new HashSet<>(flashcardPrefs.getStringSet("flashcards", new HashSet<>(Arrays.asList(root.getResources().getStringArray(R.array.default_flashcards)))));
+
+
+        for (String flashcard : flashcards) {
+            createFlashcardButton(flashcard);
         }
+
+        binding.newFlashcardAdd.setOnClickListener(v -> {
+            String flashcard = String.valueOf(binding.newFlashcardText.getText());
+            flashcards.add(flashcard);
+            flashcardPrefs.edit().putStringSet("flashcards", flashcards).apply();
+
+            createFlashcardButton(flashcard);
+        });
+
+        binding.addOrRemove.setOnClickListener(v -> {
+            editing = !editing;
+            if (editing) {
+                binding.addOrRemove.setText(R.string.finish_editing);
+                binding.addContainer.setVisibility(View.VISIBLE);
+            } else {
+                binding.addOrRemove.setText(R.string.add_or_remove_flashcards);
+                binding.addContainer.setVisibility(View.GONE);
+            }
+
+            for (int i = 0; i < layout.getChildCount(); i++) {
+                View btn = layout.getChildAt(i);
+                if (editing ) {
+                    btn.setBackgroundColor(getResources().getColor(R.color.red_600, root.getContext().getTheme()));
+                } else {
+                    btn.setBackgroundColor(MaterialColors.getColor(root, com.google.android.material.R.attr.colorPrimary));
+                }
+            }
+        });
+
+        return root;
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_flash_cards, container, false);
-    }
+    private void createFlashcardButton(String flashcard) {
+        Button btnTag = new MaterialButton(root.getContext());
+        btnTag.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        btnTag.setTextSize(18);
+        btnTag.setText(flashcard);
+        if (editing) btnTag.setBackgroundColor(getResources().getColor(R.color.red_600, root.getContext().getTheme()));
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        Button buttonEthernet = view.findViewById(R.id.buttonEthernet);
-        buttonEthernet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showFlashCard(R.string.flashcard_ethernet);
+        btnTag.setOnClickListener(v -> {
+            if (editing) {
+                flashcards.remove(flashcard);
+                flashcardPrefs.edit().putStringSet("flashcards", flashcards).apply();
+                layout.removeView(btnTag);
+            } else {
+                binding.flashcardsInterface.setVisibility(View.GONE);
+                binding.flashcardDisplay.setVisibility(View.VISIBLE);
+                binding.flashcardText.setText(flashcard);
             }
         });
 
-        Button buttonComeHere = view.findViewById(R.id.buttonComeHere);
-        buttonComeHere.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showFlashCard(R.string.flashcard_come_here);
-            }
-        });
-
-        Button buttonTurnOnRobot = view.findViewById(R.id.buttonTurnOnRobot);
-        buttonTurnOnRobot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showFlashCard(R.string.flashcard_turn_on_robot);
-            }
-        });
-
-        Button buttonReboot = view.findViewById(R.id.buttonReboot);
-        buttonReboot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showFlashCard(R.string.flashcard_reboot_robot);
-            }
-        });
-    }
-
-    private void showFlashCard(int stringId) {
-        Intent intent = new Intent(getView().getContext(), FlashCardActivity.class);
-        intent.putExtra("Content", stringId);
-
-        startActivityForResult(intent, 1);
+        layout.addView(btnTag);
     }
 
 }
