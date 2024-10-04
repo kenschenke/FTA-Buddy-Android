@@ -14,7 +14,7 @@
 <details>
     <summary>Robot Radio Lights</summary>
 
-    <img src="openmesh-radio-status-lights-1100.png" width="325px">
+    <img src="vivid-radio.jpg" width="225px">
 
     <table cellpadding="5" cellspacing="0" class="led-table">
         <tr>
@@ -24,11 +24,7 @@
                         <td colspan="2" class="bold">Power</td>
                     </tr>
                     <tr>
-                        <td class="blue blink led"> </td>
-                        <td>Powering Up</td>
-                    </tr>
-                    <tr>
-                        <td class="blue led"> </td>
+                        <td class="green led"> </td>
                         <td>Powered Up</td>
                     </tr>
                 </table>
@@ -39,23 +35,37 @@
             <td>
                 <table class="section-table">
                     <tr>
-                        <td colspan="2" class="bold">Wifi</td>
+                        <td colspan="2" class="bold">System Status</td>
                     </tr>
                     <tr>
-                        <td class="black led"> </td>
-                        <td>Needs Programming</td>
+                        <td class="green blink led"> </td>
+                        <td>Blink 1Hz - Unable to ping 10.xx.yy.4 (Field side IP)</td>
                     </tr>
                     <tr>
-                        <td class="red led"> </td>
-                        <td>AP, unlinked</td>
+                        <td class="green blink led"> </td>
+                        <td>Blink 20Hz - Firmware is currently being flashed</td>
                     </tr>
                     <tr>
-                        <td class="orange led"> </td>
-                        <td>AP, linked</td>
+                        <td class="green blink led"> </td>
+                        <td>Blink 50Hz - Firmware flashing successful, performing "first boot" sequence</td>
                     </tr>
                     <tr>
                         <td class="green led"> </td>
-                        <td>Bridge mode, linked</td>
+                        <td>Able to ping 10.xx.yy.4 (Field side IP)</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <table class="section-table">
+                    <tr>
+                        <td colspan="2" class="bold">System Status + 2.4G + 6G</td>
+                    </tr>
+                    <tr>
+                        <td class="green blink led"> </td>
+                        <td>Blink 20Hz - Radio is configured as an AP and a battery has been detected, wireless is disabled until corrected and power cycled</td>
                     </tr>
                 </table>
             </td>
