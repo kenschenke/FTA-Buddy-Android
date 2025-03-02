@@ -43,6 +43,12 @@ body {
     animation: blink 1000ms infinite;
     animation-timing-function: steps(2, jump-none);
 }
+.vivid-led {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
 .fast {
     animation: blink 500ms infinite;
     animation-timing-function: steps(2, jump-none);

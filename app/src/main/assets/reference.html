@@ -21,11 +21,27 @@
             <td>
                 <table class="section-table">
                     <tr>
-                        <td colspan="2" class="bold">Power</td>
+                        <td colspan="2" class="bold">Robot Radio, No Link to Field AP</td>
                     </tr>
                     <tr>
-                        <td class="green led"> </td>
-                        <td>Powered Up</td>
+                        <td>PWR</td>
+                        <td><div class="green vivid-led"></div></td>
+                    </tr>
+                    <tr>
+                        <td>SYS</td>
+                        <td><div class="green blink vivid-led"></div></td>
+                    </tr>
+                    <tr>
+                        <td>2.4G</td>
+                        <td class="black vivid-led"> </td>
+                    </tr>
+                    <tr>
+                        <td>6G</td>
+                        <td class="black vivid-led"> </td>
+                    </tr>
+                    <tr>
+                        <td>Rio</td>
+                        <td class="green vivid-led"> </td>
                     </tr>
                 </table>
             </td>
@@ -35,23 +51,27 @@
             <td>
                 <table class="section-table">
                     <tr>
-                        <td colspan="2" class="bold">System Status</td>
+                        <td colspan="2" class="bold">Robot Radio, Linked to Field AP</td>
                     </tr>
                     <tr>
-                        <td class="green blink led"> </td>
-                        <td>Blink 1Hz - Unable to ping 10.xx.yy.4 (Field side IP)</td>
+                        <td>PWR</td>
+                        <td><div class="green vivid-led"></div></td>
                     </tr>
                     <tr>
-                        <td class="green blink led"> </td>
-                        <td>Blink 20Hz - Firmware is currently being flashed</td>
+                        <td>SYS</td>
+                        <td><div class="green vivid-led"></div></td>
                     </tr>
                     <tr>
-                        <td class="green blink led"> </td>
-                        <td>Blink 50Hz - Firmware flashing successful, performing "first boot" sequence</td>
+                        <td>2.4G</td>
+                        <td class="black vivid-led"> </td>
                     </tr>
                     <tr>
-                        <td class="green led"> </td>
-                        <td>Able to ping 10.xx.yy.4 (Field side IP)</td>
+                        <td>6G</td>
+                        <td class="blue vivid-led"> </td>
+                    </tr>
+                    <tr>
+                        <td>Rio</td>
+                        <td class="green vivid-led"> </td>
                     </tr>
                 </table>
             </td>
@@ -61,15 +81,32 @@
             <td>
                 <table class="section-table">
                     <tr>
-                        <td colspan="2" class="bold">System Status + 2.4G + 6G</td>
+                        <td colspan="2" class="bold">AP Mode <span style="color:red">Look Out For</span></td>
                     </tr>
                     <tr>
-                        <td class="green blink led"> </td>
-                        <td>Blink 20Hz - Radio is configured as an AP and a battery has been detected, wireless is disabled until corrected and power cycled</td>
+                        <td>PWR</td>
+                        <td><div class="green vivid-led"></div></td>
+                    </tr>
+                    <tr>
+                        <td>SYS</td>
+                        <td><div class="green vivid-led"></div></td>
+                    </tr>
+                    <tr>
+                        <td>2.4G</td>
+                        <td class="black vivid-led"> </td>
+                    </tr>
+                    <tr>
+                        <td>6G</td>
+                        <td class="black vivid-led"> </td>
+                    </tr>
+                    <tr>
+                        <td>Rio</td>
+                        <td class="black vivid-led"> </td>
                     </tr>
                 </table>
             </td>
         </tr>
+
     </table>
 </details>
 
