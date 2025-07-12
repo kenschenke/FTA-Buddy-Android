@@ -227,6 +227,85 @@
 </details>
 
 <details>
+    <summary>SystemCore Lights</summary>
+
+    <table cellpadding="5" cellspacing="0" class="led-table">
+        <tr>
+            <td>
+                <table class="section-table">
+                    <tr>
+                        <td colspan="2" class="bold">Power</td>
+                    </tr>
+                    <tr>
+                        <td class="green led"></td>
+                        <td>Normal Operation</td>
+                    </tr>
+                    <tr>
+                        <td class="black led"></td>
+                        <td>No power / Reverse Polarity</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <table class="section-table">
+                    <tr>
+                        <td colspan="2" class="bold">Mode</td>
+                    </tr>
+                    <tr>
+                        <td class="orange led"></td>
+                        <td>Robot On and Disabled</td>
+                    </tr>
+                    <tr>
+                        <td class="orange blink led"></td>
+                        <td>Robot On and Enabled</td>
+                    </tr>
+                    <tr>
+                        <td class="black led"></td>
+                        <td>RT Subsystem disabled</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <table class="section-table">
+                    <tr>
+                        <td colspan="2" class="bold">Status</td>
+                    </tr>
+                    <tr>
+                        <td class="red led"></td>
+                        <td>Uncleared hardware fault;</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Brownout protection enabled*</td>
+                    </tr>
+                    <tr>
+                        <td class="red slow led"></td>
+                        <td>Display hardware fault</td>
+                    </tr>
+                    <tr>
+                        <td class="red fast led"></td>
+                        <td>CAN Bus Fault</td>
+                    </tr>
+                    <tr>
+                        <td class="black led"></td>
+                        <td>No faults</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">*Brownout protection is disabled in Alpha Image 157. Brownout protection will disable PWM and digital outputs.</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</details>
+
+<details>
     <summary>REV Motor Controller Lights</summary>
 
     <table cellpadding="5" cellspacing="0" class="led-table">
@@ -619,7 +698,7 @@
                         <td>10.TE.AM.1</td>
                     </tr>
                     <tr>
-                        <td>roboRIO</td>
+                        <td>roboRIO/SystemCore</td>
                         <td>10.TE.AM.2</td>
                     </tr>
                     <tr>
@@ -629,6 +708,18 @@
                     <tr>
                         <td>roboRIO Name</td>
                         <td>roborio-TEAM-frc.local</td>
+                    </tr>
+                    <tr>
+                        <td>SystemCore Wi-Fi</td>
+                        <td>172.30.0.1</td>
+                    </tr>
+                    <tr>
+                        <td>SystemCore USB (Windows)</td>
+                        <td>172.28.0.1</td>
+                    </tr>
+                    <tr>
+                        <td>SystemCore USB (Mac/Linux)</td>
+                        <td>172.29.0.1</td>
                     </tr>
                     <tr>
                         <td>Field AP</td>
