@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 34
+    compileSdkVersion 35
     defaultConfig {
         applicationId "com.kenschenke.ftabuddy"
         minSdkVersion 23
-        targetSdkVersion 34
+        targetSdkVersion 35
         versionCode 4
         versionName "2.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
