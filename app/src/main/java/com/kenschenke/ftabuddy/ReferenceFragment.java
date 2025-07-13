@@ -77,6 +77,10 @@ public class ReferenceFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         WebView webView = (WebView)getView().findViewById(R.id.webView);
+        webView.setWebViewClient(new CustomWebViewClient(getContext()));
+        webView.getSettings().setSupportZoom(true);
+        webView.getSettings().setBuiltInZoomControls(true);
+        webView.getSettings().setDisplayZoomControls(true);
         webView.loadUrl("file:///android_asset/reference.html");
     }
 

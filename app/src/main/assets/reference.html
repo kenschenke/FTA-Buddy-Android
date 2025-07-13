@@ -2,13 +2,13 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>FTA Buddy Reference</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>FTA(A) Reference</h1>
+<h1>CSA/FTA(A) Reference</h1>
 
 
 <details>
@@ -219,6 +219,85 @@
                     <tr>
                         <td class="red led"> </td>
                         <td>Test</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</details>
+
+<details>
+    <summary>SystemCore Lights</summary>
+
+    <table cellpadding="5" cellspacing="0" class="led-table">
+        <tr>
+            <td>
+                <table class="section-table">
+                    <tr>
+                        <td colspan="2" class="bold">Power</td>
+                    </tr>
+                    <tr>
+                        <td class="green led"></td>
+                        <td>Normal Operation</td>
+                    </tr>
+                    <tr>
+                        <td class="black led"></td>
+                        <td>No power / Reverse Polarity</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <table class="section-table">
+                    <tr>
+                        <td colspan="2" class="bold">Mode</td>
+                    </tr>
+                    <tr>
+                        <td class="orange led"></td>
+                        <td>Robot On and Disabled</td>
+                    </tr>
+                    <tr>
+                        <td class="orange blink led"></td>
+                        <td>Robot On and Enabled</td>
+                    </tr>
+                    <tr>
+                        <td class="black led"></td>
+                        <td>RT Subsystem disabled</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <table class="section-table">
+                    <tr>
+                        <td colspan="2" class="bold">Status</td>
+                    </tr>
+                    <tr>
+                        <td class="red led"></td>
+                        <td>Uncleared hardware fault;</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Brownout protection enabled*</td>
+                    </tr>
+                    <tr>
+                        <td class="red slow led"></td>
+                        <td>Display hardware fault</td>
+                    </tr>
+                    <tr>
+                        <td class="red fast led"></td>
+                        <td>CAN Bus Fault</td>
+                    </tr>
+                    <tr>
+                        <td class="black led"></td>
+                        <td>No faults</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">*Brownout protection is disabled in Alpha Image 157. Brownout protection will disable PWM and digital outputs.</td>
                     </tr>
                 </table>
             </td>
@@ -545,6 +624,102 @@
 </details>
 
 <details>
+    <summary>FRC Basic Wiring Diagram</summary>
+
+    <img alt="Layout of the core components of the control system and introductory information for them" src="frc-control-system-layout-basic.svg" style="background:white;max-width:90%">
+    <p>Diagram courtesy of FRC® Team 3161 and Stefen Acepcion.</p>
+</details>
+
+<details>
+    <summary>FRC REV Wiring Diagram</summary>
+
+    <img alt="Layout of all popular components of the control system including REV Control System Components" src="frc-control-system-layout-rev.svg" style="background:white;max-width:90%">
+    <p>Diagram courtesy of FRC® Team 3161 and Stefen Acepcion.</p>
+</details>
+
+<details>
+    <summary>FRC CTRE Wiring Diagram</summary>
+
+    <img alt="Layout of all popular components of the control system including CTRE Control System Components" src="frc-control-system-layout-ctre.svg" style="background:white;max-width:90%">
+    <p>Diagram courtesy of FRC® Team 3161 and Stefen Acepcion.</p>
+</details>
+
+<details>
+    <summary>FTC Wiring Diagram (B1 - Basic)</summary>
+
+    <img alt="Basic Control Hub RC Diagram" src="ftc-control-system-layout-b1.svg" style="background:white;max-width:90%">
+    <p>Diagram courtesy of FRC® Team 3161 and Stefen Acepcion.</p>
+</details>
+
+<details>
+    <summary>FTC Wiring Diagram (B2 - Advanced)</summary>
+
+    <img alt="Advanced Control Hub RC Diagram" src="ftc-control-system-layout-b2.svg" style="background:white;max-width:90%">
+    <p>Diagram courtesy of FRC® Team 3161 and Stefen Acepcion.</p>
+</details>
+
+<details>
+    <summary>Component Manuals</summary>
+
+    <ul>
+        <li><a href="https://frc-radio.vivid-hosting.net/">FRC Robot Radio</a></li>
+        <li><a href="https://www.ni.com/docs/en-US/bundle/roborio-20-umanual/page/umanual.html">RoboRIO 2</a></li>
+        <li><a href="https://docs.revrobotics.com/ion-control-system/pdh/overview">REV Power Distribution Hub</a></li>
+        <li><a href="https://docs.revrobotics.com/brushless/spark-max/overview/">REV Spark Max</a></li>
+        <li><a href="https://docs.revrobotics.com/brushless/spark-flex/overview">REV Spark Flex</a></li>
+        <li><a href="https://v6.docs.ctr-electronics.com/en/stable/docs/hardware-reference/talonfx/">CTRE Talon FX</a></li>
+        <li><a href="https://ctre.download/files/user-manual/Talon%20SRX%20User's%20Guide.pdf">CTRE Talon SRX</a></li>
+        <li><a href="https://ctre.download/files/user-manual/Victor%20SPX%20User's%20Guide.pdf">CTRE Victor SPX</a></li>
+        <li><a href="https://ctre.download/files/user-manual/CANivore%20User's%20Guide.pdf">CTRE CANivore</a></li>
+        <li><a href="https://v6.docs.ctr-electronics.com/en/stable/docs/hardware-reference/pigeon2/">CTRE Pigeon 2.0</a></li>
+        <li><a href="https://v6.docs.ctr-electronics.com/en/stable/docs/hardware-reference/cancoder/index.html">CTRE CANcoder</a></li>
+    </ul>
+</details>
+
+<details>
+    <summary>Software Documentation</summary>
+
+    <ul>
+        <li><a href="https://github.wpilib.org/allwpilib/docs/release/java/index.html">WPILib Java API Documentation</a></li>
+        <li><a href="https://github.wpilib.org/allwpilib/docs/release/cpp/index.html">WPILib C++ API Documentation</a></li>
+        <li><a href="https://robotpy.readthedocs.io/projects/robotpy/en/stable/">WPILib Python API Documentation</a></li>
+        <li><a href="https://docs.wpilib.org/en/stable/docs/software/commandbased/index.html">WPILib Commands</a></li>
+        <li><a href="https://v6.docs.ctr-electronics.com/en/stable/index.html">CTRE Phoenix 6</a></li>
+        <li><a href="https://api.ctr-electronics.com/phoenix6/release/java/">CTRE Phoenix 6 Java API Documentation</a></li>
+        <li><a href="https://api.ctr-electronics.com/phoenix6/release/cpp/">CTRE Phoenix 6 C++ API Documentation</a></li>
+        <li><a href="https://api.ctr-electronics.com/phoenix6/release/python/">CTRE Phoenix 6 Python API Documentation</a></li>
+        <li><a href="https://v5.docs.ctr-electronics.com/en/stable/">CTRE Phoenix 5</a></li>
+        <li><a href="https://api.ctr-electronics.com/phoenix/release/java/">CTRE Phoenix 5 Java API Documentation</a></li>
+        <li><a href="https://api.ctr-electronics.com/phoenix/release/cpp/">CTRE Phoenix 5 C++ API Documentation</a></li>
+        <li><a href="https://docs.reduxrobotics.com/reduxlib">ReduxLib</a></li>
+        <li><a href="https://apidocs.reduxrobotics.com/current/java/">ReduxLib Java API Documentation</a></li>
+        <li><a href="https://apidocs.reduxrobotics.com/current/cpp/">ReduxLib C++ API Documentation</a></li>
+        <li><a href="https://www.playingwithfusion.com/frc/2022/javadoc/com/playingwithfusion/package-summary.html">Playing with Fusion Java API Documentation</a></li>
+        <li><a href="https://www.playingwithfusion.com/frc/2022/cppdoc/html/annotated.html">Playing with Fusion C++ API Documentation</a></li>
+        <li><a href="https://www.kauailabs.com/public_files/navx-mxp/apidocs/java/com/kauailabs/navx/frc/package-summary.html">Kauai Labs (navX MXP) Java API Documentation</a></li>
+        <li><a href="https://www.kauailabs.com/public_files/navx-mxp/apidocs/c++/">Kauai Labs (navX MXP) C++ API Documentation</a></li>
+        <li><a href="https://www.kauailabs.com/public_files/navx-mxp/apidocs/labview/index.html">Kauai Labs (navX MXP) LabVIEW API Documentation</a></li>
+        <li><a href="https://docs.revrobotics.com/docs/software-resources">REVLib</a></li>
+        <li><a href="https://codedocs.revrobotics.com/java/com/revrobotics/package-summary.html">REVLib Java API Documentation</a></li>
+        <li><a href="https://codedocs.revrobotics.com/cpp/namespacerev.html">REVLib C++ API Documentation</a></li>
+        <li><a href="https://docs.photonvision.org/en/latest/docs/description.html">PhotonVision</a></li>
+        <li><a href="https://javadocs.photonvision.org/">PhotonVision Java API Documentation</a></li>
+        <li><a href="https://cppdocs.photonvision.org/">PhotonVision C++ API Documentation</a></li>
+        <li><a href="https://pathplanner.dev/home.html">PathPlanner</a></li>
+        <li><a href="https://pathplanner.dev/api/java/">PathPlanner Java API Documentation</a></li>
+        <li><a href="https://pathplanner.dev/api/cpp/">PathPlanner C++ API Documentation</a></li>
+        <li><a href="https://pathplanner.dev/api/python/">PathPlanner Python API Documentation</a></li>
+        <li><a href="https://choreo.autos/">Choreo</a></li>
+        <li><a href="https://choreo.autos/api/choreolib/java/index.html">Choreo Java API Documentation</a></li>
+        <li><a href="https://choreo.autos/api/choreolib/cpp/index.html">Choreo C++ API Documentation</a></li>
+        <li><a href="https://docs.yagsl.com/">YAGSL</a></li>
+        <li><a href="https://broncbotz3481.github.io/YAGSL-Lib/docs/">YAGSL Java API Documentation</a></li>
+        <li><a href="https://doglog.dev/">DogLog</a></li>
+        <li><a href="https://javadoc.doglog.dev/">DogLog Java API Documentation</a></li>
+    </ul>
+</details>
+
+<details>
     <summary>Keyboard Shortcuts</summary>
 
     <h3>Driver Station</h3>
@@ -619,7 +794,7 @@
                         <td>10.TE.AM.1</td>
                     </tr>
                     <tr>
-                        <td>roboRIO</td>
+                        <td>roboRIO/SystemCore</td>
                         <td>10.TE.AM.2</td>
                     </tr>
                     <tr>
@@ -629,6 +804,18 @@
                     <tr>
                         <td>roboRIO Name</td>
                         <td>roborio-TEAM-frc.local</td>
+                    </tr>
+                    <tr>
+                        <td>SystemCore Wi-Fi</td>
+                        <td>172.30.0.1</td>
+                    </tr>
+                    <tr>
+                        <td>SystemCore USB (Windows)</td>
+                        <td>172.28.0.1</td>
+                    </tr>
+                    <tr>
+                        <td>SystemCore USB (Mac/Linux)</td>
+                        <td>172.29.0.1</td>
                     </tr>
                     <tr>
                         <td>Field AP</td>

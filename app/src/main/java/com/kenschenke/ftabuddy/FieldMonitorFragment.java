@@ -133,7 +133,7 @@ public class FieldMonitorFragment extends Fragment {
     private void loadUrl() {
         String url = editTextUrl.getText().toString();
         if (!url.startsWith("http://") && !url.startsWith("https://")) {
-            url = "http://" + url;
+            url = "http://".concat(url);
         }
 
         SharedPreferences prefs = getActivity().getSharedPreferences("com.kenschenke.ftabuddy", Context.MODE_PRIVATE);
