@@ -72,6 +72,7 @@ public class AboutFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         WebView webView = getView().findViewById(R.id.webView);
+        webView.setWebViewClient(new CustomWebViewClient(getContext()));
         webView.loadUrl("file:///android_asset/aboutpage.html");
     }
 }
