@@ -6,8 +6,8 @@ android {
         applicationId "com.kenschenke.ftabuddy"
         minSdkVersion 23
         targetSdkVersion 35
-        versionCode 6
-        versionName "2.4"
+        versionCode 7
+        versionName "2.5"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
