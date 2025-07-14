@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 35
+    compileSdkVersion 36
     defaultConfig {
         applicationId "com.kenschenke.ftabuddy"
         minSdkVersion 23
         targetSdkVersion 35
-        versionCode 4
-        versionName "2.2"
+        versionCode 6
+        versionName "2.4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
